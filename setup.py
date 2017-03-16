@@ -4,7 +4,7 @@ __version__ = '0.0.1'
 
 
 def readme():
-    with open('README.rst') as f:
+    with open('README.md') as f:
         return f.read()
 
 
@@ -30,6 +30,15 @@ setup(name='plotlyhtmlexporter',
       ],
       license='MIT',
       packages=['plotlyhtmlexporter', ],
-      install_requires=['nbconvert>=5.1.1',
-                        'traitlets>=4.3.2'],
-      zip_safe=False)
+      install_requires=['jupyter',
+                        'nbconvert>=5.1.1',
+                        'nbformat>=4.2'
+                        'traitlets',
+                        ],
+      zip_safe=False,
+      entry_points={
+          'nbconvert.exporters': [
+            'plotlyhtml = plotlyhtmlexporter:PlotlyHTMLExporter',
+          ],
+      },
+      )
