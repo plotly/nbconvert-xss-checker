@@ -1,9 +1,18 @@
-import os
+import mock
 import nbformat
+import os
 
+from itertools import cycle
 from unittest import TestCase
 
 from plotlyhtmlexporter import PlotlyHTMLExporter, PlotlySanitizeHTML
+
+
+uuid_pool = cycle(["A", "A"])
+
+
+def fake_uuid4():
+    return uuid_pool.next()
 
 
 def get_sample_notebook(filename):
@@ -38,6 +47,7 @@ class TestPlotlySanitizeHTML(TestCase):
 
 class TestPlotlyHTMLExporter(TestCase):
 
+    @mock.patch('uuid.uuid4', fake_uuid4)
     def test_exporter(self):
 
         # Exporter should convert HTML to text, but retain Plotly charts.
