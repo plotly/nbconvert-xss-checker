@@ -2,3 +2,4 @@ jupyter
 traitlets
 nbconvert>=5.1.1
 nbformat>=4.2
+mock
