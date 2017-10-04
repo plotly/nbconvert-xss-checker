@@ -34,7 +34,7 @@ class PlotlySanitizeHTML(SanitizeHTML):
 
         context = {'unique_div_id': uuid.uuid4()}
 
-        # Parse `text/vnd.plotly.v1+json` content and make it available as 'text/html'
+        # Parse `application/vnd.plotly.v1+json` content and make it available as 'text/html'
         for output in outputs:
             if output['output_type'] in ('stream', 'error'):
                 continue
