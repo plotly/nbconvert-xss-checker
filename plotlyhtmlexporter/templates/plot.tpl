@@ -1,3 +1,8 @@
+{#
+   This file shares its code partially with streambed.
+   Please make sure to update the relevant code in streambed when
+   making changes to this file.
+#}
 <div class="output_subarea output_html rendered_html">
 	<div id="{{ unique_div_id }}"
 			 style="height: {{ height }}px; width: {{ width }}px;"
