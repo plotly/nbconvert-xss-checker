@@ -35,6 +35,7 @@ setup(name='plotlyhtmlexporter',
                         'nbformat>=4.2'
                         'traitlets',
                         ],
+      include_package_data=True,
       zip_safe=False,
       entry_points={
           'nbconvert.exporters': [
